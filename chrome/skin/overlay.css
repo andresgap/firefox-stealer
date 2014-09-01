@@ -1,0 +1,7 @@
+#stealer-toolbarbutton {
+  list-style-image: url(chrome://stealer/skin/images/icon32.png);
+}
+
+toolbar[iconsize="small"] #stealer-toolbarbutton {
+  list-style-image: url(chrome://stealer/skin/images/icon16.png);
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+
+<!DOCTYPE page SYSTEM "chrome://stealer/locale/locale.dtd">
+
+<page id="stealer-sidebar-page"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml" >
+
+  <script type="application/x-javascript"
+    src="chrome://stealer/content/common.js" />
+  <script type="application/x-javascript"
+    src="chrome://stealer/content/sidebar.js" />
+
+  <vbox id="stealer-sidebar-passwords-box" />
+</page>

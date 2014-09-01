@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css"
+  href="chrome://stealer/skin/overlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://stealer/locale/locale.dtd">
+
+<overlay id="stealer-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://stealer/content/common.js" />
+  <script type="application/x-javascript"
+    src="chrome://stealer/content/overlay.js" />
+
+  <commandset id="mainCommandSet">
+    <command id="stealer-toolbarbutton-command"
+      oncommand="StealerUI.Overlay.toggleSidebar();" />
+    <command id="stealer-sidebar-command"
+      oncommand="StealerUI.Overlay.toggleSidebar();" />
+  </commandset>
+
+  <keyset id="mainKeyset">
+    <key id="stealer-toolbarbutton-key" key="P"
+      modifiers="shift control"
+      command="stealer-toolbarbutton-command" />
+    <key id="stealer-sidebar-key" key="S"
+      modifiers="shift control"
+      command="stealer-sidebar-command" />
+  </keyset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="stealer-toolbarbutton"
+      label="&stealer.toolbarbutton.label;"
+      class="toolbarbutton-1"
+      command="stealer-toolbarbutton-command" />
+  </toolbarpalette>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem id="stealer-sidebar-menuitem"
+      key="stealer-sidebar-key"
+      observes="stealer-sidebar-broadcaster"/>
+  </menupopup>
+
+  <!-- Sidebar -->
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="stealer-sidebar-broadcaster"
+      label="&stealer.sidebar.label;"
+      sidebartitle="&stealer.sidebar.title;"
+      sidebarurl="chrome://stealer/content/sidebar.xul"
+      autoCheck="false"
+      type="checkbox"
+      group="sidebar"
+      command="stealer-sidebar-command" />
+  </broadcasterset>
+</overlay>
